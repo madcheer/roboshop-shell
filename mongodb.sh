@@ -42,19 +42,19 @@ VALIDATE $? "Installing MongoDB "
 
 systemctl enable mongod &>>$LOGFILE
 
-VALIDATE $? "Enabled MongoDB service"
+VALIDATE $? "Enabling MongoDB"
 
 systemctl start mongod &>>$LOGFILE
 
-VALIDATE $? "starting MongoDB services "
+VALIDATE $? "starting MongoDB "
 
 sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mongod.conf &>>$LOGFILE
 
-VALIDATE $? "IP address copied"
+VALIDATE $? "Copying IP address"
 
 systemctl restart mongod &>>$LOGFILE
 
-VALIDATE $? "restarting MongoDB Services"
+VALIDATE $? "restarting MongoDB"
 
 
 
