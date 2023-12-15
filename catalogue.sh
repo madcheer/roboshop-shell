@@ -87,7 +87,7 @@ systemctl start catalogue &>>$LOGFILE
 
 VALIDATE $? "Starting Catalogue servive"
 
-sudo cp -p /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/ &>>$LOGFILE
+sudo cp  /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/ &>>$LOGFILE
 
 VALIDATE $? "Coying mongoDB repo"
 
