@@ -13,7 +13,7 @@ ID=$(id -u)
 
 if [ $ID -ne 0 ]
   then
-      echo "you are not a root user to install"
+      echo -e "ERROR: $R you are not a root user to install $N"
       exit 1
   else
     echo "you are root user"
@@ -34,7 +34,7 @@ fi
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOGFILE
 
-VALIDATE $? "Copied MongoDB Repo"
+VALIDATE $? "Copying MongoDB Repo"
 
 dnf install mongodb-org -y  &>>$LOGFILE
 

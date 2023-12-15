@@ -13,7 +13,7 @@ ID=$(id -u)
 
 if [ $ID -ne 0 ]
   then
-      echo "you are not a root user to install"
+      echo -e "ERROR: $R you are not a root user to install $N"
       exit 1
   else
     echo "you are root user"
@@ -87,7 +87,7 @@ systemctl start catalogue &>>$LOGFILE
 
 VALIDATE $? "Starting Catalogue servive"
 
-cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOGFILE
+cp -p /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOGFILE
 
 VALIDATE $? "Coying mongoDB repo"
 
