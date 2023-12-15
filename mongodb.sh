@@ -38,15 +38,15 @@ VALIDATE $? "Copied MongoDB Repo"
 
 dnf install mongodb-org -y  &>>$LOGFILE
 
-VALIDATE $? "MongoDB installed"
+VALIDATE $? "Installing MongoDB "
 
 systemctl enable mongod &>>$LOGFILE
 
-VALIDATE $? "MongoDB service enabled"
+VALIDATE $? "Enabled MongoDB service"
 
 systemctl start mongod &>>$LOGFILE
 
-VALIDATE $? "MongoDB service started"
+VALIDATE $? "starting MongoDB services "
 
 sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mongod.conf &>>$LOGFILE
 
@@ -54,7 +54,7 @@ VALIDATE $? "IP address copied"
 
 systemctl restart mongod &>>$LOGFILE
 
-VALIDATE $? "Restarted MongoDB Services"
+VALIDATE $? "restarting MongoDB Services"
 
 
 
