@@ -95,7 +95,7 @@ dnf install mongodb-org-shell -y &>>$LOGFILE
 
 VALIDATE $? "Installing MongoDB Client"
 
-mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js &>>LOGFILE
+mongo --host mongodb.madcheer.online </app/schema/catalogue.js &>>LOGFILE
 
 VALIDATE $? "Loading the schema"
 
