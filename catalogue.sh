@@ -45,7 +45,7 @@ dnf install nodejs -y &>>$LOGFILE
 VALIDATE $? "Installing nodejs18"
 
 id roboshop
-if [ $? ne 0]
+if [ $? ne 0 ]
   then
      useradd roboshop &>>$LOGFILE
      VALIDATE $? "creating roboshop user"
@@ -87,7 +87,7 @@ systemctl start catalogue &>>$LOGFILE
 
 VALIDATE $? "Starting Catalogue servive"
 
-cp -p /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/ &>>$LOGFILE
+sudo cp -p /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/ &>>$LOGFILE
 
 VALIDATE $? "Coying mongoDB repo"
 
