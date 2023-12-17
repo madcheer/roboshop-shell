@@ -69,7 +69,7 @@ VALIDATE $? "unzipping catalog.zip file"
 
 npm install  &>>$LOGFILE
 
-VALIDATE $? "Installing depencies"
+VALIDATE $? "Installing dependencies"
 
 cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>>$LOGFILE
 

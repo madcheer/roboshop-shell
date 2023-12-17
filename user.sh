@@ -83,7 +83,7 @@ VALIDATE $? "Copying MONGODB Repo file"
 
 dnf install mongodb-org-shell -y &>>$LOGFILE
 
-VALIDATE $? "Installing depencies"
+VALIDATE $? "Installing dependencies"
 
 mongo --host mongodb.madcheer.online </app/schema/user.js &>>$>LOGFILE
 
