@@ -61,7 +61,7 @@ VALIDATE $? "Unzipping web.zip file into /tmp dir"
 
 cp -p /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/
 
-VALIDATE $? "Copying roboshop config file"
+VALIDATE $? "Copying roboshop reverse proxy config file"
 
 systemctl restart nginx 
 
