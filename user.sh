@@ -81,7 +81,7 @@ cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOGFIL
 
 VALIDATE $? "Copying MONGODB Repo file"
 
-dnf install mongodb-org-shell -y &>>$LOGFILE
+sudo dnf install mongodb-org-shell -y &>>$LOGFILE
 
 VALIDATE $? "Installing dependencies"
 
