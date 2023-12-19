@@ -54,7 +54,7 @@ VALIDATE $? "Downloading the front content"
 
 cd /usr/share/nginx/html  
 
-unzip /tmp/web.zip &>>$LOGFILE
+unzip -o /tmp/web.zip &>>$LOGFILE
 
 VALIDATE $? "Unzipping web.zip file into /tmp dir"
 
