@@ -57,6 +57,14 @@ mkdir -p /app
 
 curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip  &>>$LOGFILE
 
+cd /app
+
+unzip /tmp/user.zip &>>$LOGFILE
+
+VALIDATE $? "Unzipping user.zip file"
+
+cd /app
+
 npm install &>>$LOGFILE
 
 VALIDATE $? "Installing dependencies"
