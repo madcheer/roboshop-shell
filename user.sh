@@ -36,11 +36,11 @@ dnf module disable nodejs -y
 
 VALIDATE $? "Disabling Currnet NodeJS version"
 
-dnf module enable nodejs:18 -y
+dnf module enable nodejs:18 -y &>>$LOGFILE
 
 VALIDATE $? "Enabling  NodeJS:18"
 
-dnf install nodejs -y
+dnf install nodejs -y &>>$LOGFILE
 
 VALIDATE $? "Installing Nodejs:18"
 
