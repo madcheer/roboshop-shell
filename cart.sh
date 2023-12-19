@@ -53,7 +53,7 @@ if [ $? -ne 0 ]
      echo -e "roboshop user is already exist $Y SKIPPING $N" &>>$LOGFILE
 fi
 
-mkdir /app
+mkdir -p /app
 
 curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip  &>>$LOGFILE
 
@@ -61,7 +61,7 @@ VALIDATE $? "Downloading cart.zip file"
 
 cd /app
 
-unzip /tmp/cart.zip &>>$LOGFILE
+unzip -o /tmp/cart.zip &>>$LOGFILE
 
 VALIDATE $? "Unzipping cart.zip file"
 
