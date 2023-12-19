@@ -59,7 +59,7 @@ curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip  &>>$
 
 cd /app
 
-unzip /tmp/user.zip &>>$LOGFILE
+unzip -o /tmp/user.zip &>>$LOGFILE
 
 VALIDATE $? "Unzipping user.zip file"
 
@@ -85,7 +85,7 @@ systemctl start user &>>$LOGFILE
 
 VALIDATE $? "Starting user service"
 
-cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOGFILE
+cp -p /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOGFILE
 
 VALIDATE $? "Copying MONGODB Repo file"
 
