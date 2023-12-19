@@ -57,7 +57,7 @@ mkdir -p /app
 
 curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip  &>>$LOGFILE
 
-npm install &>>LOGFILE
+npm install &>>$LOGFILE
 
 VALIDATE $? "Installing dependencies"
 
