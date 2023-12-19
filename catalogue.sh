@@ -73,7 +73,7 @@ VALIDATE $? "Installing dependencies"
 
 cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>>$LOGFILE
 
-VALIDATE $? "copying catalouge service file"
+VALIDATE $? "copying catalogue service file"
 
 systemctl daemon-reload &>>$LOGFILE
 
