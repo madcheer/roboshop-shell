@@ -8,8 +8,7 @@
     TIMESTAMP=$(date +%F-%H-%M-%S)
     LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
-    exec &>$LOGFILE
-
+   
 ID=$(id -u)
 
 if [ $ID -ne 0 ]
@@ -33,15 +32,15 @@ fi
 
 }
 
-dnf module disable nodejs -y
+dnf module disable nodejs -y &>$LOGFILE
 
 VALIDATE $? "Disabling Default NodeJS"
 
-dnf module enable nodejs:18 -y
+dnf module enable nodejs:18 -y  &>$LOGFILE
 
 VALIDATE $? "Enabiling Default NodeJS:18"
 
-dnf install nodejs -y 
+dnf install nodejs -y  &>$LOGFILE
 
 VALIDATE $? "Installing nodejs:18"
 
@@ -49,40 +48,40 @@ id roboshop
 if [ $? -ne 0 ]
    then
     useradd roboshop
-    VALIDATE $? "successfully created roboshop user"
+    VALIDATE $? "successfully created roboshop user" &>$LOGFILE
    else
-     echo -e "roboshop user is already exist $Y SKIPPING $N"
+     echo -e "roboshop user is already exist $Y SKIPPING $N" &>$LOGFILE
 fi
 
 mkdir /app
 
-curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip 
+curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip  &>$LOGFILE
 
 VALIDATE $? "Downloading cart.zip file"
 
-unzip /tmp/cart.zip
+unzip /tmp/cart.zip &>$LOGFILE
 
 VALIDATE $? "Unzipping cart.zip file"
 
 cd /app 
 
-npm install 
+npm install &>$LOGFILE
 
-VALIDATE $? "Installing Depedencies"
+VALIDATE $? "Installing Depedencies" 
 
-cp -p /home/centos/roboshop-shell/cart.service /etc/systemd/system/
+cp -p /home/centos/roboshop-shell/cart.service /etc/systemd/system/ &>$LOGFILE
 
-VALIDATE $? "copying cart.service file"
+VALIDATE $? "copying cart.service file" 
 
-systemctl daemon-reload
+systemctl daemon-reload &>$LOGFILE
 
 VALIDATE $? "reloading the deamon"
 
-systemctl enable cart 
+systemctl enable cart &>$LOGFILE
 
 VALIDATE $? "enabling the cart service"
 
-systemctl start cart
+systemctl start cart &>$LOGFILE
 
 VALIDATE $? "starting catalog service"
 
