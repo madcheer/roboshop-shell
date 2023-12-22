@@ -12,5 +12,5 @@ do
      else
         INSTANCE_TYPE="t2.micro"
     fi
-aws ec2 run-instances --image-id ami-03265a0778a880afb --count 1 --instance-type $INSTANCE_TYPE --security-group-ids sg-0c40ab29368c1d034
+aws ec2 run-instances --image-id $AMI --count 1 --instance-type $INSTANCE_TYPE --security-group-ids $SG_ID
  done
