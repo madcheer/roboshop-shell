@@ -4,7 +4,7 @@ SG_ID=sg-0c40ab29368c1d034
 
 INSTANCES=('mongodb" "catalogue" "user")
 
-for [ i in $INSTANCES ]
+for  i in $INSTANCES ]
 do
    if [ $i == 'mongodb' ]
      then 
