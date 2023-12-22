@@ -6,7 +6,7 @@ INSTANCES=('mongodb" "catalogue" "user")
 
 for  i in "${INSTANCES[@]}"
 do
-   if [ $i == 'mongodb' ]
+   if [ $i == "mongodb" ]
      then 
         INSTANCE_TYPE="t3.small"
      else
