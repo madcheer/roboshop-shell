@@ -6,6 +6,7 @@ INSTANCES=("mongodb" "catalogue" "user")
 
 for  i in "${INSTANCES[@]}"
 do
+    echo "Instance type.. $i"
    if [ $i == "mongodb" ]
      then 
         INSTANCE_TYPE="t3.small"
