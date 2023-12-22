@@ -2,7 +2,7 @@
 AMI=ami-03265a0778a880afb
 SG_ID=sg-0c40ab29368c1d034
 
-INSTANCES=('mongodb" "catalogue" "user")
+INSTANCES=("mongodb" "catalogue" "user")
 
 for  i in "${INSTANCES[@]}"
 do
